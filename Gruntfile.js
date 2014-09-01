@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       lib: {
-        src: ['lib/**/*.js']
+        src: ['lib/**/*.js', '!lib/dist/**/*' ]
       },
       test: {
         src: ['test/**/*.js']
@@ -39,13 +39,22 @@ module.exports = function(grunt) {
         tasks: ['jshint:gruntfile']
       },
       lib: {
-        files: ['lib/**/*.js', 'sass/**/*.scss', '**/*.html'],
-        tasks: ['jshint:lib', 'mochacli', 'sass']
+        files: ['lib/**/*.js', '!lib/dist/**.*', 'sass/**/*.scss', '**/*.html'],
+        tasks: ['jshint:lib', 'mochacli', 'sass', 'browserify']
       },
       test: {
         files: '<%= jshint.test.src %>',
         tasks: ['jshint:test', 'mochacli']
       }
+    },
+    browserify: {
+      standalone: {
+        src: [ 'lib/main.js' ],
+        dest: 'lib/dist/bundle.js',
+        options: {
+            standalone: 'bundle'
+        }
+      },
     },
     sass: {
       dist: {
@@ -60,6 +69,6 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.loadNpmTasks('grunt-sass');
-  grunt.registerTask('default', ['jshint', 'mochacli', 'sass']);
+  grunt.loadNpmTasks('grunt-sass', 'grunt-browserify');
+  grunt.registerTask('default', ['jshint', 'mochacli', 'sass', 'browserify']);
 };

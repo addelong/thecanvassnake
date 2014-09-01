@@ -26,7 +26,7 @@
     "mocha"
   ],
   "devDependencies": {
-    "browserify": "^4.1.3",
+    "grunt-browserify": "^3.0.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-nodeunit": "^0.3.3",
     "grunt-contrib-watch": "^0.6.1",
