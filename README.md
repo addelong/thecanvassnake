@@ -1,4 +1,4 @@
-#  [![Build Status](https://secure.travis-ci.org/addelong/thecanvassnake.png?branch=master)](http://travis-ci.org/addelong/thecanvassnake)
+#  [![Build Status]](https://snap-ci.com/addelong/thecanvassnake/branch/master)
 
 > A snake clone built with canvas, nodejs, underscore and mocha
 
