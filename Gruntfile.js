@@ -39,16 +39,27 @@ module.exports = function(grunt) {
         tasks: ['jshint:gruntfile']
       },
       lib: {
-        files: '<%= jshint.lib.src %>',
-        tasks: ['jshint:lib', 'mochacli']
+        files: ['lib/**/*.js', 'sass/**/*.scss', '**/*.html'],
+        tasks: ['jshint:lib', 'mochacli', 'sass']
       },
       test: {
         files: '<%= jshint.test.src %>',
         tasks: ['jshint:test', 'mochacli']
       }
+    },
+    sass: {
+      dist: {
+        files: {
+          'stylesheets/application.css' : 'sass/application.scss'
+        },
+        options: {
+          includePaths: require('node-bourbon').includePaths
+        }
+      }
     }
   });
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'mochacli']);
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.registerTask('default', ['jshint', 'mochacli', 'sass']);
 };

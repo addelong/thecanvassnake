@@ -1,0 +1,10 @@
+@import "bourbon";
+
+$background-color: bisque;
+$text-color: darkgrey;
+
+body {
+  background-color: $background-color;
+  font-family: $helvetica;
+  color: $text-color;
+}
