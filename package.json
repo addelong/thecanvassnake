@@ -32,9 +32,11 @@
     "time-grunt": "^0.3.1",
     "grunt-mocha-cli": "^1.9.0",
     "jshint-stylish": "^0.2.0"  ,
-        "browserify": "^4.1.3",
-    "express": "4.x" 
+        "browserify": "^4.1.3"
   },
+  "dependencies": {
+        "express": "4.x" 
+  }
   "scripts": {
     "test": "grunt"  ,
         "browser": "browserify lib/thecanvassnake.js > browser.js" 
