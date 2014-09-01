@@ -36,7 +36,7 @@
   },
   "dependencies": {
         "express": "4.x" 
-  }
+        },
   "scripts": {
     "test": "grunt"  ,
         "browser": "browserify lib/thecanvassnake.js > browser.js" 
