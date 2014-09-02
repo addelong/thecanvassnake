@@ -25,31 +25,35 @@ describe('The initial snake', function(){
 });
 
 describe('Moving the snake', function(){
+	var snakeLength = 0;
+	var head;
 	beforeEach(function(){
 		snake.initialize();
+		snakeLength = snake.getSnake().pieces.length;
+		head = snake.getSnake().pieces[snakeLength-1];
 	});
 	it('should increase the y coordinate of the first piece if moving down', function(){
 		snake.getSnake().direction = "down";
-		var headY = snake.getSnake().pieces[0].y;
 		snake.move();
-		expect(snake.getSnake().pieces[0].y).to.equal(++headY);
+		var newHead = snake.getSnake().pieces[snakeLength-1];
+		expect(newHead.y).to.equal(++head.y);
 	});
 	it('should increase the x coordinate of the first piece if moving right', function(){
 		snake.getSnake().direction = "right";
-		var headX = snake.getSnake().pieces[0].x;
 		snake.move();
-		expect(snake.getSnake().pieces[0].x).to.equal(++headX);
+		var newHead = snake.getSnake().pieces[snakeLength-1];
+		expect(newHead.x).to.equal(++head.x);
 	});
 	it('should decrease the y coordinate of the first piece if moving up', function(){
 		snake.getSnake().direction = "up";
-		var headY = snake.getSnake().pieces[0].y;
 		snake.move();
-		expect(snake.getSnake().pieces[0].y).to.equal(--headY);
+		var newHead = snake.getSnake().pieces[snakeLength-1];
+		expect(newHead.y).to.equal(--head.y);
 	});
 	it('should decrease the x coordinate of the first piece if moving left', function(){
 		snake.getSnake().direction = "left";
-		var headX = snake.getSnake().pieces[0].x;
 		snake.move();
-		expect(snake.getSnake().pieces[0].x).to.equal(--headX);
+		var newHead = snake.getSnake().pieces[snakeLength-1];
+		expect(newHead.x).to.equal(--head.x);
 	});
 });
