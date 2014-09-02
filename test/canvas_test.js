@@ -1,8 +1,10 @@
-var canvas = require('../lib/canvas.js');
 var chai = require('chai');
 var sinon = require('sinon');
 var _ = require('underscore');
 var expect = chai.expect;
+var domHelper = require('./domhelper.js');
+domHelper.setup();
+var canvas = require('../lib/canvas.js');
 
 var dom = {};
 
