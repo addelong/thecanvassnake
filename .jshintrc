@@ -12,5 +12,5 @@
   "eqnull": true,
   "node": true,
   "expr": true,
-  "globals": {"describe": false, "it": false, "beforeEach": false, "window": false}
+  "globals": {"describe": false, "it": false, "beforeEach": false, "window": false, "addEventListener": false, "getKey": false}
 }
