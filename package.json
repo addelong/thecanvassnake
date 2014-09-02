@@ -23,7 +23,11 @@
     "snake",
     "nodejs",
     "canvas",
-    "mocha"
+    "mocha",
+    "sass",
+    "bourbon",
+    "underscore",
+    "browserify"
   ],
   "devDependencies": {
     "chai": "^1.9.1",
@@ -40,7 +44,8 @@
     "time-grunt": "^0.3.1"
   },
   "dependencies": {
-    "express": "4.x"
+    "express": "4.x",
+    "underscore": "^1.7.0"
   },
   "scripts": {
     "test": "grunt",
