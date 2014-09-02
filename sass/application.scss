@@ -4,7 +4,7 @@ $background-color: bisque;
 $text-color: darkslategray;
 
 body {
-  background-color: $background-color;
+  @include background-image( radial-gradient(white, bisque) );
   font-family: $helvetica;
   color: $text-color;
   text-align: center;
