@@ -12,13 +12,13 @@ sinon.stub(canvas, 'edges', function(){
 	return {width: 500, height: 500};
 });
 
-describe('The game', function(){
-	it('should initialize game settings when reset', function(){
+describe('Resetting the game', function(){
+	it('should initialize game settings', function(){
 		game.reset({});
 		expect(game.settings.score).to.equal(0);
 		expect(game.settings.speed).to.equal(20);
 	});
-	it('should clear the canvas when reset', function(){
+	it('should clear the canvas', function(){
 		game.reset({});
 		expect(canvasStub.clearCanvas).to.have.been.called;
 	});
