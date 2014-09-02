@@ -12,7 +12,8 @@ describe('The canvas', function() {
 						canvasElement: { width: 5, height: 5, style: {} },
 						context: { 
 									scale: function () {},
-						  		 	fillRect: function () {} 
+						  		 	fillRect: function () {},
+						  		 	fillText: function () {} 
 						  		 },
 						getScaleFactor: function () {return 2;}
 					});
@@ -28,12 +29,13 @@ describe('The canvas', function() {
 		expect(stub).to.have.been.called;
 	});
 
-	it('should make the canvas background black', function() {
-		var stub = sinon.stub(dom.context, "fillRect");
-		canvas.fill(dom);
+	it('should be able to draw the start menu', function() {
+		var fillRectStub = sinon.stub(dom.context, "fillRect");
+		var fillTextStub = sinon.stub(dom.context, "fillText");
+		canvas.drawStartMenu(dom);
 
-		expect(dom.context.fillStyle).to.equal("black");
-		expect(stub.fillRect).to.have.been.called;
+		expect(fillRectStub).to.have.been.called;
+		expect(fillTextStub).to.have.been.called;
 	});
 
 });
