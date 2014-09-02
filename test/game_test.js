@@ -8,6 +8,9 @@ addEventListener = function(){}; // jshint ignore:line
 var game = require('../lib/game.js');
 
 var canvasStub = sinon.stub(canvas, 'clearCanvas');
+sinon.stub(canvas, 'edges', function(){
+	return {width: 500, height: 500};
+});
 
 describe('The game', function(){
 	it('should initialize game settings when reset', function(){
