@@ -15,8 +15,8 @@ sinon.stub(canvas, 'edges', function(){
 describe('The game', function(){
 	it('should initialize game settings when reset', function(){
 		game.reset({});
-		expect(game.getSettings().score).to.equal(0);
-		expect(game.getSettings().speed).to.equal(20);
+		expect(game.settings.score).to.equal(0);
+		expect(game.settings.speed).to.equal(20);
 	});
 	it('should clear the canvas when reset', function(){
 		game.reset({});
