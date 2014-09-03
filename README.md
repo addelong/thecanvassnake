@@ -1,47 +1,27 @@
-#  [Build Status](https://snap-ci.com/addelong/thecanvassnake/branch/master)
-
-> A snake clone built with canvas, nodejs, underscore and mocha
+> A snake clone built with canvas, nodejs, underscore, browserify and mocha
 
 
-## Getting Started
+## Live version
 
-Install the module with: `npm install thecanvassnake`
+Currently deployed on [Heroku](http://http://thecanvassnake.herokuapp.com/).
 
-```js
-var thecanvassnake = require('thecanvassnake');
-thecanvassnake.awesome(); // "awesome"
-```
-
-Install with cli command
-
-```sh
-$ npm install -g thecanvassnake
-$ thecanvassnake --help
-$ thecanvassnake --version
-```
-
-
-```sh
-# creates a browser.js
-$ grunt browserify
-```
-
-
+View the build status on [Snap-CI](https://snap-ci.com/addelong/thecanvassnake/branch/master).
 
 ## Documentation
 
-_(Coming soon)_
+To run locally:
 
+```sh
+npm install
+grunt
+node app.js
+```
 
-## Examples
+To enable live linting, testing, sassing and browserifying, start:
 
-_(Coming soon)_
-
-
-## Contributing
-
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com).
-
+```sh
+grunt watch
+```
 
 ## License
 
