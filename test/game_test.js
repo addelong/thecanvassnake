@@ -23,3 +23,7 @@ describe('Resetting the game', function(){
 		expect(canvasStub.clearCanvas).to.have.been.called;
 	});
 });
+
+describe('The main game loop', function(){
+	
+});

@@ -3,6 +3,7 @@ var expect = chai.expect;
 var sinon = require('sinon');
 var snake = require('../lib/snake.js');
 var canvas = require('../lib/canvas.js');
+var _ = require('underscore');
 
 sinon.stub(canvas, 'drawBox');
 
@@ -17,10 +18,10 @@ describe('The initial snake', function(){
 		expect(snake.snake.direction).to.equal("right");
 	});
 	it('should have pieces populated with coordinates', function(){
-		expect(snake.snake.pieces[0].x).to.equal(0);
-		expect(snake.snake.pieces[0].y).to.equal(0);
-		expect(snake.snake.pieces[4].x).to.equal(4);
-		expect(snake.snake.pieces[4].y).to.equal(0);
+		expect(_.first(snake.snake.pieces).x).to.equal(0);
+		expect(_.first(snake.snake.pieces).y).to.equal(0);
+		expect(_.last(snake.snake.pieces).x).to.equal(4);
+		expect(_.last(snake.snake.pieces).y).to.equal(0);
 	});
 });
 
@@ -30,30 +31,30 @@ describe('Moving the snake', function(){
 	beforeEach(function(){
 		snake.initialize();
 		snakeLength = snake.snake.pieces.length;
-		head = snake.snake.pieces[snakeLength-1];
+		head = _.last(snake.snake.pieces);
 	});
 	it('should increase the y coordinate of the first piece if moving down', function(){
 		snake.snake.direction = "down";
 		snake.move();
-		var newHead = snake.snake.pieces[snakeLength-1];
+		var newHead = _.last(snake.snake.pieces);
 		expect(newHead.y).to.equal(++head.y);
 	});
 	it('should increase the x coordinate of the first piece if moving right', function(){
 		snake.snake.direction = "right";
 		snake.move();
-		var newHead = snake.snake.pieces[snakeLength-1];
+		var newHead = _.last(snake.snake.pieces);
 		expect(newHead.x).to.equal(++head.x);
 	});
 	it('should decrease the y coordinate of the first piece if moving up', function(){
 		snake.snake.direction = "up";
 		snake.move();
-		var newHead = snake.snake.pieces[snakeLength-1];
+		var newHead = _.last(snake.snake.pieces);
 		expect(newHead.y).to.equal(--head.y);
 	});
 	it('should decrease the x coordinate of the first piece if moving left', function(){
 		snake.snake.direction = "left";
 		snake.move();
-		var newHead = snake.snake.pieces[snakeLength-1];
+		var newHead = _.last(snake.snake.pieces);
 		expect(newHead.x).to.equal(--head.x);
 	});
 });

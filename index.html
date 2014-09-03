@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>The Canvas Snake</title>
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" href="stylesheets/application.css" />
 	</head>
 <body>
 	<h1>Snake!</h1>
-	<canvas width="500" height="500" id="canvas">
-	</canvas>
-	<h2>Current Score: 
-		<div id="score">0</div>
-	</h2>
-	<h2>High Score: 
-		<div id="highScore">0</div>
-	</h2>
+	<div class="container">
+		<div class="scores">
+			<h2>
+				Current Score: <div id="score" class="score">0</div>
+				High Score: <div id="highScore" class="score">0</div>
+			</h2>
+		</div>
+		<div class="canvas">
+			<canvas width="500" height="500" id="canvas"></canvas>
+		</div>
+		<div class="boardSizes">
+			<h2>Select your board size:</h2>
+			<input id="smallBoard" type="radio" align="right" name="boardSize" value="small">Small
+			<input id="mediumBoard" type="radio" align="right" name="boardSize" value="medium" checked>Medium
+			<input id="largeBoard" type="radio" align="right" name="boardSize" value="large">Large
+		</div>
+	</div>
+	
 </body>
 <script type="text/javascript" src="lib/dist/bundle.js"></script>
 </html>

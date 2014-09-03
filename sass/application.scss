@@ -9,3 +9,23 @@ body {
   color: $text-color;
   text-align: center;
 }
+
+.container {
+	text-align: center;
+	width: 100%;
+}
+
+.scores {
+	float: left;
+	width: 25%;
+}
+
+.canvas {
+	display: inline;
+	width: 50%;
+}
+
+.boardSizes {
+	float: right;
+	width: 25%;
+}
