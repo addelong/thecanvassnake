@@ -3,7 +3,7 @@
 
 ## Live version
 
-Currently deployed on [Heroku](http://http://thecanvassnake.herokuapp.com/).
+Currently deployed on [Heroku](http://thecanvassnake.herokuapp.com/).
 
 View the build status on [Snap-CI](https://snap-ci.com/addelong/thecanvassnake/branch/master).
 
